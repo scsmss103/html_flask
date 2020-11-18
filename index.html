@@ -80,14 +80,29 @@
          <small id="startHelp" class="form-text text-muted"
           >format: '2020-01-01'</small
       </div>
-
-
-
-
-      <div class="form-group form-check">
-        <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+      <div class="form-group">
+        <label for="mult">Implied Move Multiplyer</label>
+        <input
+          type="number"
+          class="form-control"
+          id="mult"
+          aria-describedby="multHelp"
+        />
+         <small id="multHelp" class="form-text text-muted"
+          >1 = 1 std</small
       </div>
+      <div class="form-group">
+        <label for="prem">Prmium buffer</label>
+        <input
+          type="number"
+          class="form-control"
+          id="prem"
+          aria-describedby="premHelp"
+        />
+         <small id="premHelp" class="form-text text-muted"
+          >expected move will increase by premium buffer</small
+      </div>
+      <br><br>
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 
