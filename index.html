@@ -30,11 +30,11 @@
       </div>
 
       <div class="form-group">
-        <label for="exampleInputEmail1">Email address</label>
+        <label for="ticker">Ticker</label>
         <input
-          type="email"
+          type="text"
           class="form-control"
-          id="exampleInputEmail1"
+          id="ticker"
           aria-describedby="emailHelp"
         />
         <small id="emailHelp" class="form-text text-muted"
@@ -42,13 +42,48 @@
         >
       </div>
       <div class="form-group">
-        <label for="exampleInputPassword1">Password</label>
+        <label for="dit">Days in trade</label>
         <input
-          type="password"
+          type="number"
           class="form-control"
-          id="exampleInputPassword1"
+          id="dit"
         />
       </div>
+      <div class="form-group">
+        <label for="dte">Days to Expiry</label>
+        <input
+          type="number"
+          class="form-control"
+          id="dte"
+        />
+      </div>
+      <div class="form-group">
+        <label for="cat">Category</label>
+        <input
+          type="number"
+          class="form-control"
+          id="cat"
+          aria-describedby="catHelp"
+        />
+        <small id="catHelp" class="form-text text-muted"
+          >close or high_low</small
+        >
+      </div>
+      <div class="form-group">
+        <label for="start">Start Date</label>
+        <input
+          type="text"
+          class="form-control"
+          id="start"
+          aria-describedby="startHelp"
+        />
+         <small id="startHelp" class="form-text text-muted"
+          >format: '2020-01-01'</small
+      </div>
+
+
+
+
       <div class="form-group form-check">
         <input type="checkbox" class="form-check-input" id="exampleCheck1" />
         <label class="form-check-label" for="exampleCheck1">Check me out</label>
