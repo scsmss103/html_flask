@@ -11,7 +11,7 @@ function init() {
 }
 
 function change_form(frm) {
-  console.log(frm);
+  
   var forms = {
     inside_move: {
       dit: {
@@ -115,7 +115,7 @@ function change_form(frm) {
   document.getElementById("form").innerHTML = html;
   document.getElementById(frm).setAttribute('selected','selected');
   
-  console.log(html);
+
 }
 
 function test() {
