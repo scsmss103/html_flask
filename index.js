@@ -1,14 +1,7 @@
 // Import stylesheets
 import "./style.css";
 
-function init() {
-  var sel = document.getElementById("studySelection");
-  //var sel_id = sel.options[sel.selectedIndex].id;
-  sel.addEventListener("change", function() {
-    change_form(sel.value);
-  });
-  console.log(sel.value);
-}
+
 
 function change_form(frm) {
   
@@ -122,5 +115,4 @@ function test() {
   console.log("file loaded");
 }
 
-window.init = init;
 window.change_form = change_form;
