@@ -29,9 +29,9 @@ Parameters
 <form action="#" method="post" class="ml-3 mr-3 mt-1">
       <div id="div_studySelection" class="form-group" style="width:50%">
         <label for="studySelection">Select Study</label>
-        <select name=study id="studySelection" class="form-control form-control-sm">
-          <option value="inside_move" id="Inside Moves">Inside Moves</option>
-          <option value="strangle" id="Strangle Study">Strangle Study</option>
+        <select name=study id="studySelection" class="form-control form-control-sm" onchange="change_form(document.getElementById('studySelection').value)">
+          <option value="inside_move" id="inside_move">Inside Moves</option>
+          <option value="strangle" id="strangle">Strangle Study</option>
         </select>
       </div>
 

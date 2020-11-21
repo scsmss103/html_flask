@@ -5,12 +5,13 @@ function init() {
   var sel = document.getElementById("studySelection");
   //var sel_id = sel.options[sel.selectedIndex].id;
   sel.addEventListener("change", function() {
-    console.log(sel.value);
+    change_form(sel.value);
   });
   console.log(sel.value);
 }
 
 function change_form(frm) {
+  console.log(frm);
   var forms = {
     inside_move: {
       dit: {
@@ -71,26 +72,49 @@ function change_form(frm) {
   html += '<form action="#" method="post" class="ml-3 mr-3 mt-1">';
   html += document.getElementById("div_studySelection").outerHTML;
   html += document.getElementById("div_ticker").outerHTML;
-  
-  for(var x in curr_frm){
+
+  for (var x in curr_frm) {
     counter++;
     var field = curr_frm[x];
-    if(counter%2!=0){
+    if (counter % 2 != 0) {
       html += '<div class="form-row">';
+    }
+    html +=
+      '<div class="form-group col"><label for="' +
+      field.id +
+      '">' +
+      field.label +
+      "</label>";
+    html +=
+      '<input type="' +
+      field.type +
+      '" class="form-control" id="' +
+      field.id +
+      '" name="' +
+      field.name +
+      '" value="' +
+      field.value +
+      '"';
+    if ("aria_describedby" in field) {
+      html +=
+        ' aria-describedby="' +
+        field.aria_describedby +
+        '"/><small id="' +
+        field.aria_describedby +
+        '" class="form-text text-muted">';
+      html += field.description + "</small></div>";
+    } else {
+      html += "/></div>";
+    }
+    if (counter % 2 == 0) {
+      html += "</div>";
     };
-    html += '<div class="form-group col"><label for="'+field.id+'">'+field.label+'</label>';
-    html += '<input type="'+field.type+'" class="form-control" id="'+field.id+'" name="'+field.name+'" value="'+field.value+'"';
-    if('aria_describedby' in field){
-      html += ' aria-describedby="'+field.aria_describedby+'"/><small id="'+field.aria_describedby+'" class="form-text text-muted">';
-      html += field.description+'</small></div>';
-    }else{html += '/></div>';};
-    if(counter%2==0){
-      html += '</div>';
-    };
-
-    console.log('aria_describedby' in field);
   };
 
+  html += '<br><button type="submit" class="btn btn-primary mb-1">Submit</button></form><script>init();</script>';
+  document.getElementById("form").innerHTML = html;
+  document.getElementById(frm).setAttribute('selected','selected');
+  
   console.log(html);
 }
 
