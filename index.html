@@ -15,110 +15,126 @@
       integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
       crossorigin="anonymous"
     />
-
+    <script type="text/javascript" src="{{ url_for('static', filename='index.js') }}"></script>
     <title>Sam's Studies</title>
   </head>
   <body>
-    <h1>Study page</h1>
-    <br />
-    <form action="#" method="post">
-      <div class="form-group">
+    <h1 class="ml-3">Study Page</h1>
+    <br>
+    <button class="btn btn-secondary btn-sm m-1" type="button" data-toggle="collapse" data-target="#collapseForm" aria-expanded="true" aria-controls="collapseForm">
+Parameters
+</button>
+<div class="collapse show border m-1" id="collapseForm">
+<div id="form">
+<form action="#" method="post" class="ml-3 mr-3 mt-1">
+      <div class="form-group" style="width:50%">
         <label for="studySelection">Select Study</label>
-        <select id="studySelection" class="form-control form-control-sm">
-          <option>Inside Moves</option>
+        <select name=study id="studySelection" class="form-control form-control-sm">
+          <option value="inside_move" id="Inside Moves">Inside Moves</option>
+          <option value="strangle" id="Strangle Study">Strangle Study</option>
         </select>
       </div>
 
-      <div class="form-group">
+      <div class="form-group" style="width:25%">
         <label for="ticker">Ticker</label>
         <input
           type="text"
           class="form-control"
           id="ticker"
           name="ticker"
-          aria-describedby="emailHelp"
         />
-        <small id="emailHelp" class="form-text text-muted"
-          >We'll never share your email with anyone else.</small
-        >
+        
       </div>
-      <div class="form-group">
+
+<div class="form-row">
+      <div class="form-group col">
         <label for="dit">Days in trade</label>
         <input
           type="number"
           class="form-control"
           id="dit"
           name="dit"
+          value="7"
         />
       </div>
-      <div class="form-group">
+      <div class="form-group col">
         <label for="dte">Days to Expiry</label>
         <input
           type="number"
           class="form-control"
           id="dte"
           name="dte"
+          value="30"
         />
       </div>
-      <div class="form-group">
+</div>
+<div class="form-row">
+      <div class="form-group col">
         <label for="cat">Category</label>
         <input
           type="text"
           class="form-control"
           id="cat"
           name="cat"
+          value="high_low"
           aria-describedby="catHelp"
         />
-        <small id="catHelp" class="form-text text-muted"
-          >close or high_low</small
-        >
+        <small id="catHelp" class="form-text text-muted">close or high_low</small>
       </div>
-      <div class="form-group">
+      <div class="form-group col">
         <label for="start">Start Date</label>
         <input
           type="text"
           class="form-control"
           id="start"
           name="start"
+          value="2018-10-08"
           aria-describedby="startHelp"
         />
-         <small id="startHelp" class="form-text text-muted"
-          >format: '2020-01-01'</small
+         <small id="startHelp" class="form-text text-muted">
+	format: '2018-10-08' (default)</small>
       </div>
-      <div class="form-group">
+</div>
+<div class="form-row">
+      <div class="form-group col">
         <label for="mult">Implied Move Multiplyer</label>
         <input
           type="number"
-          step = "0.01"
           class="form-control"
           id="mult"
           name="mult"
+          value="1"
           aria-describedby="multHelp"
         />
-         <small id="multHelp" class="form-text text-muted"
-          >1 = 1 std</small
+         <small id="multHelp" class="form-text text-muted">
+	1 = 1 std</small>
       </div>
-      <div class="form-group">
+      <div class="form-group col">
         <label for="prem">Prmium buffer</label>
         <input
           type="number"
-          step = "0.01"
           class="form-control"
           id="prem"
           name="prem"
+          value="0"
           aria-describedby="premHelp"
         />
-         <small id="premHelp" class="form-text text-muted"
-          >expected move will increase by premium buffer</small
+         <small id="premHelp" class="form-text text-muted">
+	expected move will increase by premium buffer</small>
       </div>
-      <br><br>
-      <button type="submit" class="btn btn-primary">Submit</button>
+</div>
+      <br>
+      <button type="submit" class="btn btn-primary mb-1">Submit</button>
     </form>
-
-    <!-- Optional JavaScript; choose one of the two! -->
-
-    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
-    <script
+<script>init();</script>
+</div>
+</div>
+    {% block results %}
+    {% endblock results%}
+    {% block table %}
+    {% endblock table %}
+    
+<script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
       crossorigin="anonymous"
