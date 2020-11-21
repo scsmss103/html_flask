@@ -106,6 +106,13 @@ function change_form(frm) {
 
   html += '<br><button type="submit" class="btn btn-primary mb-1">Submit</button></form><script>init();</script>';
   document.getElementById("form").innerHTML = html;
+  
+  var opt = document.getElementById("studySelection").childNodes;
+  for(var i=0;i<opt.length;i++){
+    if(opt[i].tagName=='OPTION'){
+    opt[i].removeAttribute('selected');
+    }
+  };
   document.getElementById(frm).setAttribute('selected','selected');
   
 
@@ -113,6 +120,7 @@ function change_form(frm) {
 
 function test() {
   console.log("file loaded");
+  document.getElementById("studySelection").getElementsByTag("option")[0]
 }
 
 window.change_form = change_form;
