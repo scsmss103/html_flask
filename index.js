@@ -118,9 +118,17 @@ function change_form(frm) {
 
 }
 
+
+function init_res_tbl(){
+
+  var tbl = new Tabulator("#res_tbl",{data:res_tbl_data,autoColumns:true});
+
+};
+
 function test() {
   console.log("file loaded");
   document.getElementById("studySelection").getElementsByTag("option")[0]
 }
 
 window.change_form = change_form;
+window.init_res_tbl = init_res_tbl;
